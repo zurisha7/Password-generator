@@ -13,7 +13,7 @@
  var characters = function (){
    var promptCharacters = prompt("How many characters would you like in your password? Please choose a number between 8 and 128.");
  
- 
+
   // make sure answer is not empty
    if (promptCharacters === null || promptCharacters === "" ) {
      alert("Please choose a valid number!");
@@ -69,21 +69,37 @@
 
    if (promptLowerCase === "" || promptLowerCase === null){
      window.alert("Please choose a valid option!");
+     return lowerCase();
    }
-  if(promptLowerCase === 'yes'){
-  lowerCase.charset = "abcdefghijklmnopqrstuvwxyz";
+  if(promptLowerCase === "yes"){
+   promptLowerCase = "abcdefghijklmnopqrstuvwxyz";
+  }
+   if(promptLowerCase === "no"){
+     promptLowerCase = "";
+   }
+   
+   console.log(promptLowerCase);
   };
-   // if yes use abcdefghijklmnopqrstuvwxyz
- };
+lowerCase();
 
- var signs = function() {
-   var promptSigns = window.prompt("Would you like special characters? Please type 'yes' or 'no.");
-   promptSigns = promptSigns.toLowerCase();
+ var special = function() {
+   var promptSpecial = window.prompt("Would you like special characters? Please type 'yes' or 'no.");
+   promptSpecial = promptSpecial.toLowerCase();
 
-   if (promptSigns === "" || promptSigns === null){
+   if (promptSpecial === "" || promptSpecial === null){
      window.alert("Please choose a valid option!");
+     return special();
    }
+     if(promptSpecial === "yes"){
+       promptSpecial =  "!#$%&'()*+,-./:;<=>?@[^_{|}~";
+     }
+     if (promptSpecial === "no"){
+       promptSpecial = "";
+     }
+   
+   console.log(promptSpecial);
  };
+ special();
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
