@@ -4,8 +4,10 @@
 
 //Welcome
 
-
-
+var welcome = function(){
+  alert("Welcome to password Generator! Please click ok to begin creating your password!")
+}
+welcome();
 
  // ask criteria questions
 
@@ -38,7 +40,7 @@
    }
 };
      //store answer as password.length
-
+characters();
 
  var upperCase = function() {
    var promptUpperCase = prompt("Would you like uppercase letters? Please type 'yes' or 'no'.");
@@ -100,6 +102,47 @@ lowerCase();
    console.log(promptSpecial);
  };
  special();
+
+var numerals = function(){
+  var promptNumerals = prompt("Would you like numbers? Please type 'yes' or 'no'?");
+    promptNumerals = promptNumerals.toLowerCase();
+  
+  if (promptNumerals === "" || promptNumerals === null){
+    alert("Please choose a valid option!");
+    return numerals();
+  }
+  if(promptNumerals === "yes"){
+    promptNumerals = "1234567890";
+  }
+  if (promptNumerals === "no"){
+    promptNumerals = "";
+  }
+
+  console.log(promptNumerals);
+};
+  numerals();
+
+  
+   var createPassword = function(promptCharacters){
+     var word = "";
+     var criteria = (promptNumerals + promptLowerCase + promptUpperCase + promptSpecial);
+
+     for(var i = 0; i < promptCharacters; i++)
+      word += criteria.charAt(Math.floor(Math.random() * criteria.length));
+console.log (createPassword);
+   };
+
+    var createPassword = function(promptCharacters){
+    var word = "";
+    var criteria = promptLowerCase + promptUpperCase +
+
+
+
+characters();
+
+
+  
+
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
@@ -108,12 +151,6 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  passwordLength = numeric.value;
-  passwordText.value = password;
+
 };
-
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
-
-characters();
+createPassword();
