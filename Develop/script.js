@@ -2,13 +2,14 @@
 var generateBtn = document.querySelector("#generate");
     generateBtn.addEventListener("click", function(){
       word = createPassword();
-      document.getElementById("password")
-    })
+      document.getElementById("password").placeholder = word;
+
+    });
 // functions to create password
 createPassword= function(){
   passLength = parseInt(prompt("How many characters would you like to include in your password? Please choose a number between 8 and 128."));
         // make sure number is between 8 and 128
-        if (passLength < 8|| passLength < 128)  {
+        if (passLength < 8|| passLength > 128)  {
           alert("Password must be between 8 and 128. Please choose again");
         }//make sure there is a number given
         else if
@@ -28,7 +29,7 @@ createPassword= function(){
 
 
  //make sure one letter criteria is met
- if (passUpperCase !== true || passLowerCase !== true){
+ if (passUpper !== true || passLower !== true){
     alert("Password must have either lower case or upper case letters!");
  }
  //make sure at least one criteria is met
@@ -83,7 +84,10 @@ createPassword= function(){
    //4 confirmed criteria
   else if (passUpper && passLower && passSpecial && passNumbers){
     criteria = upper.concat(lower, numbers, special);
-  }
+  };
+
+  //variable to use for chosen length
+  var total = "";
 
   // string for criteria 
 
@@ -100,27 +104,17 @@ createPassword= function(){
   var passNumbers;
   var criteria;
 
+//create random string from criteria
+     for(var i = 0; i < total; i++){
+       var randomCriteria = criteria(Math.floor(Math.random() * criteria.length));
+       total.push(randomCriteria);
+     }
+    
+  //make array a string
+  var word = total.join("");
+     passwordText(word);
+     return word;
+    
 
-  
-   var createPassword = function(){
-     var word = "";
-     criteria =
-
-     for(var i = 0; i < characters; i++)
-      word += criteria.charAt(Math.floor(Math.random() * criteria.length));
-console.log (createPassword);
-   };
-
-
-
-
-
-  
-
-// Get references to the #generate element
-
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
+  function passwordText(word){document.querySelector("#password").textContent = word;
+    }};
