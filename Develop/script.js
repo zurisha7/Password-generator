@@ -1,119 +1,107 @@
-  // string for criteria 
+  // array for criteria 
 
-  upper  = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-  lower = "abcdefghijklmnopqrstuvwxyz";
-  special =  "!#$%&'()*+,-./:;<=>?@[^_{|}~";
-  numbers = "1234567890";
+var upper  =["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+var lower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+var special = ["!","#","$","%","&","(","*","+","-","/",":",";","<","=",">","?","@","[","^","_","{","}","~",";"]
+var numbers = ["1","2","3","4","5","6","7","8","9","0"];
   
-  //Variables
-  var passLength;
-  var passLower;
-  var passUpper;
-  var passSpecial;
-  var passNumbers;
-  var criteria;
-  var word;
-      
+var passwordPrint = document.getElementById("password");
+
 
 //funtion to create click to start
 var generateBtn = document.querySelector("#generate");
+
   generateBtn.addEventListener("click", function(){
-    word = criteria ();
-    document.getElementById("password").placeholder = word;
-  })
+      criteriaAsk();
+      
+   });
 
   
-//functions to create password
+//functions to create password      
 
-
-        
-
- var criteria = function() {
-passUpper = confirm("Would you like to include uppercase letters? Please click ok for yes!");
+ var criteriaAsk = function() {
+var passUpper = confirm("Would you like to include uppercase letters? Please click ok for yes!");
        
-passLower = confirm("Would you like to include lowercase letters? Please click ok for yes.!");
+var passLower = confirm("Would you like to include lowercase letters? Please click ok for yes!");
           
       
-passSpecial = confirm("Would you like  to include special characters? Please click ok for yes!");
+var passSpecial = confirm("Would you like  to include special characters? Please click ok for yes!");
       
 
-passNumbers = confirm("Would you like to include numbers? Please click ok for yes!");
+var passNumbers = confirm("Would you like to include numbers? Please click ok for yes!");
  
 
  //make sure at least one criteria is met
- if (passUpper === false && passLower ===false && passSpecial === false && passNumbers === false) {
+ if (passUpper === false && passLower === false && passSpecial === false && passNumbers === false) {
         alert("Password must have at least one criteria!!");
-        return criteria();
+        return criteriaAsk();
       }
   //what to do with one criteria confirmed
-  else if (passUpper === true && passLower === false && passSpecial === false && passNumbers  === false){
-    criteria = upper;
+  if (passUpper === true && passLower === false && passSpecial === false && passNumbers  === false){
+    var criteria = upper;
+    console.log(criteria)
   }
-  // two confirmed criterias
-  else if(passUpper === true && passLower === true && passSpecial && passNumbers) {
-    criteria = upper.concat(lower);
+
+ // two confirmed criterias
+if(passUpper === true && passLower === true && passSpecial && passNumbers) {
+    var criteria = upper.concat(lower);
   }
-  else if(passUpper === true && passSpecial === true && passLower === false && passNumbers === false){
-    criteria = upper.concat(special);
+   if(passUpper === true && passSpecial === true && passLower === false && passNumbers === false){
+    var criteria = upper.concat(special);
   }
-  else if(passUpper=== true && passNumbers === true  && passSpecial === false && passLower === false){
-    criteria = upper.concat(numbers);
+   if(passUpper=== true && passNumbers === true  && passSpecial === false && passLower === false){
+    var criteria = upper.concat(numbers);
   }
-  else if(passLower === true && passSpecial === true && passUpper === false && passNumbers === false ){
-    criteria = lower.concat(special);
+   if(passLower === true && passSpecial === true && passUpper === false && passNumbers === false ){
+    var criteria = lower.concat(special);
   }
-  else if(passLower === true && passNumbers === true && passUpper === false && passSpecial === false){
-    criteria = lower.concat(numbers);
+   if(passLower === true && passNumbers === true && passUpper === false && passSpecial === false){
+    var criteria = lower.concat(numbers);
   }
-  else if(passSpecial === true && passNumbers === true && passUpper === false && passLower === false ){
-    criteria = special.concat(numbers);
+   if(passSpecial === true && passNumbers === true && passUpper === false && passLower === false ){
+    var criteria = special.concat(numbers);
   }
   // three criteria confirmed
-  else if(passUpper === true && passLower === true && passNumbers === true && passSpecial === false){
-    criteria = upper.concat(lower, numbers);
+   if(passUpper === true && passLower === true && passNumbers === true && passSpecial === false){
+    var criteria = upper.concat(lower, numbers);
   }
-  else if(passUpper === true && passLower === true && passSpecial === true && passNumbers === false){
-    criteria = upper.concat(lower, special);
+   if(passUpper === true && passLower === true && passSpecial === true && passNumbers === false){
+    var criteria = upper.concat(lower, special);
   }
-  else if(passUpper === true && passNumbers === true && passSpecial === true && passLower === false){
-    criteria = upper.concat(numbers, special);
+ if(passUpper === true && passNumbers === true && passSpecial === true && passLower === false){
+   var criteria = upper.concat(numbers, special);
   }
-  else if(passLower === true && passNumbers === true && passSpecial === true && passUpper === false){
-    criteria = lower.concat(numbers, special);
+  if(passLower === true && passNumbers === true && passSpecial === true && passUpper === false){
+    var criteria = lower.concat(numbers, special);
   }
    //4 confirmed criteria
   if (passUpper === true && passLower === true && passSpecial === true && passNumbers === true){
-    criteria = upper.concat(lower, numbers, special);
+    var criteria = upper.concat(lower, numbers, special);
   }
- 
-  // find the length
-    passText 
-   = parseInt(prompt("How many characters would you like to include in your password? Please choose a number between 8 and 128."));
+console.log(criteria)
+
+  var passText = parseInt(prompt("How many characters would you like to include in your password? Please choose a number between 8 and 128."));
  // make sure number is between 8 and 128
-  if (passLength < 8|| passLength > 128)  {
+  if (passText < 8 || passText > 128)  {
    alert("Password must be between 8 and 128. Please choose again");
  }//make sure there is a number given
- else if
-   (passLength === "" || passLength === null) {
+  if
+   (passText === NaN || passText === null) {
      alert("Please provide a number!")
+     return criteriaAsk;
+      
+   }
+ console.log(passText)
    
+ var passArray = [];
+  //create random string from criteria
+  for (var i = 0; i < passText; i++){
+
+      var password = criteria[Math.floor(Math.random() * criteria.length)];
+     passArray.push(password);
+      console.log(password);
+  }
   
- }
-
- 
-//create random string from criteria
-     for (var i = 0; i < passText; i++){
-       var randomCriteria = criteria(Math.floor(Math.random() * passText.length));
-       return randomCriteria;
-     };
-     var pass = criteria.join("");
-      criteria(pass);
-      return pass;
-
-
-  console.log(criteria);
- console.log(passText);
-
+      passwordPrint.textContent = passArray.join('');
+   };  
     
-  function criteria(pass){document.querySelector("#password").textContent = passText;}
-};
