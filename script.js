@@ -39,9 +39,16 @@ var passNumbers = confirm("Would you like to include numbers? Please click ok fo
   //what to do with one criteria confirmed
   if (passUpper === true && passLower === false && passSpecial === false && passNumbers  === false){
     var criteria = upper;
-    console.log(criteria)
   }
-
+  if(passUpper === false && passLower === true && passSpecial === false && passNumbers === false){
+    var criteria = lower;
+  }
+  if(passUpper === false && passLower === false && passSpecial === true && passNumbers === false){
+    var criteria = special;
+  }
+  if(passUpper === false && passLower === false && passSpecial === false && passNumbers === true) {
+    var criteria = numbers;
+  }
  // two confirmed criterias
 if(passUpper === true && passLower === true && passSpecial && passNumbers) {
     var criteria = upper.concat(lower);
@@ -61,6 +68,8 @@ if(passUpper === true && passLower === true && passSpecial && passNumbers) {
    if(passSpecial === true && passNumbers === true && passUpper === false && passLower === false ){
     var criteria = special.concat(numbers);
   }
+  if(passUpper === true && passLower === true && passSpecial && passNumbers) {
+    var criteria = upper.concat(lower);
   // three criteria confirmed
    if(passUpper === true && passLower === true && passNumbers === true && passSpecial === false){
     var criteria = upper.concat(lower, numbers);
