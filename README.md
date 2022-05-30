@@ -14,4 +14,10 @@
       email: andreamwest7@gmail.com
       github: https://github.com/zurisha7
       
+  ## Deployed page
+    https://zurisha7.github.io/Password-generator/
+    
+  ## Homepage
       
+      ![image](https://user-images.githubusercontent.com/100632883/171013456-5dc2e735-f735-4fc6-88bf-f3220eaff3c8.png)
+
