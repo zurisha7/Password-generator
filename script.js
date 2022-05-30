@@ -112,5 +112,5 @@ console.log(criteria)
   }
   
       passwordPrint.textContent = passArray.join('');
-   };  
-    
+   }  
+  };
