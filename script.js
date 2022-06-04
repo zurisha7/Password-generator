@@ -85,7 +85,7 @@ else if(passUpper === true && passLower === true && passSpecial === false && pas
   }
    //4 confirmed criteria
   if(passUpper === true && passLower === true && passSpecial === true && passNumbers === true){
-    var criteria = upper += lower += numbers += special;
+    var criteria = upper.concat(lower, numbers, special);
   }
 console.log(criteria);
 
