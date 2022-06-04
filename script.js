@@ -37,68 +37,69 @@ var passNumbers = confirm("Would you like to include numbers? Please click ok fo
         return criteriaAsk();
       }
   //what to do with one criteria confirmed
-  if (passUpper === true && passLower === false && passSpecial === false && passNumbers  === false){
+  else if (passUpper === true && passLower === false && passSpecial === false && passNumbers  === false){
     var criteria = upper;
   }
-  if(passUpper === false && passLower === true && passSpecial === false && passNumbers === false){
+  else if(passUpper === false && passLower === true && passSpecial === false && passNumbers === false){
     var criteria = lower;
   }
-  if(passUpper === false && passLower === false && passSpecial === true && passNumbers === false){
+  else if(passUpper === false && passLower === false && passSpecial === true && passNumbers === false){
     var criteria = special;
   }
-  if(passUpper === false && passLower === false && passSpecial === false && passNumbers === true) {
+  else if(passUpper === false && passLower === false && passSpecial === false && passNumbers === true) {
     var criteria = numbers;
   }
  // two confirmed criterias
-if(passUpper === true && passLower === true && passSpecial && passNumbers) {
+else if(passUpper === true && passLower === true && passSpecial === false && passNumbers === false) {
     var criteria = upper.concat(lower);
   }
-   if(passUpper === true && passSpecial === true && passLower === false && passNumbers === false){
+   else if(passUpper === true && passSpecial === true && passLower === false && passNumbers === false){
     var criteria = upper.concat(special);
   }
-   if(passUpper=== true && passNumbers === true  && passSpecial === false && passLower === false){
+   else if(passUpper=== true && passNumbers === true  && passSpecial === false && passLower === false){
     var criteria = upper.concat(numbers);
   }
-   if(passLower === true && passSpecial === true && passUpper === false && passNumbers === false ){
+   else if(passLower === true && passSpecial === true && passUpper === false && passNumbers === false ){
     var criteria = lower.concat(special);
   }
-   if(passLower === true && passNumbers === true && passUpper === false && passSpecial === false){
+   else if(passLower === true && passNumbers === true && passUpper === false && passSpecial === false){
     var criteria = lower.concat(numbers);
   }
-   if(passSpecial === true && passNumbers === true && passUpper === false && passLower === false ){
+   else if(passSpecial === true && passNumbers === true && passUpper === false && passLower === false ){
     var criteria = special.concat(numbers);
   }
-  if(passUpper === true && passLower === true && passSpecial && passNumbers) {
+  else if(passUpper === true && passLower === true && passSpecial && passNumbers) {
     var criteria = upper.concat(lower);
   // three criteria confirmed
-   if(passUpper === true && passLower === true && passNumbers === true && passSpecial === false){
+  } else if(passUpper === true && passLower === true && passNumbers === true && passSpecial === false){
     var criteria = upper.concat(lower, numbers);
   }
-   if(passUpper === true && passLower === true && passSpecial === true && passNumbers === false){
+  else if(passUpper === true && passLower === true && passSpecial === true && passNumbers === false){
     var criteria = upper.concat(lower, special);
   }
- if(passUpper === true && passNumbers === true && passSpecial === true && passLower === false){
+ else if(passUpper === true && passNumbers === true && passSpecial === true && passLower === false){
    var criteria = upper.concat(numbers, special);
   }
-  if(passLower === true && passNumbers === true && passSpecial === true && passUpper === false){
+  else if(passLower === true && passNumbers === true && passSpecial === true && passUpper === false){
     var criteria = lower.concat(numbers, special);
   }
    //4 confirmed criteria
-  if (passUpper === true && passLower === true && passSpecial === true && passNumbers === true){
-    var criteria = upper.concat(lower, numbers, special);
+  if(passUpper === true && passLower === true && passSpecial === true && passNumbers === true){
+    var criteria = upper += lower += numbers += special;
   }
-console.log(criteria)
+console.log(criteria);
 
   var passText = parseInt(prompt("How many characters would you like to include in your password? Please choose a number between 8 and 128."));
  // make sure number is between 8 and 128
   if (passText < 8 || passText > 128)  {
    alert("Password must be between 8 and 128. Please choose again");
- }//make sure there is a number given
-  if
+   return criteriaAsk();
+ }
+ //make sure there is a number given
+  else if 
    (passText === NaN || passText === null) {
      alert("Please provide a number!")
-     return criteriaAsk;
-      
+    return criteriaAsk();   
    }
  console.log(passText)
    
@@ -112,5 +113,6 @@ console.log(criteria)
   }
   
       passwordPrint.textContent = passArray.join('');
-   }  
-  };
+
+   };
+  
